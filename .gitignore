@@ -3,3 +3,4 @@ knapsack.js
 knapsack.wasm
 .emscripten_cache/
 .emscripten/
+.vscode/
