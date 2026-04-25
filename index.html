@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <title>This is the title of the webpage!</title>
+        <script src="knapsack.js" defer></script>
+        <script src="resolveKnapsack.js" defer></script>
+    </head>
+  
+    <body>
+        <h3>Agregar Item</h3>
+        <div id="item-form" style="display: flex;">
+            
+            <label for="Item-W">Peso:</label><br>
+            <input type="number" id="Item-W" name="Item-W"><br>
+
+            <label for="item-V">Valor:</label><br>
+            <input type="number" id="item-V" name="item-V">
+
+            <button type="button" id="add-item-btn" onclick="addItem()">Agregar item</button><br>
+        </div><br>
+        
+        <div id="list-items"></div><br>
+        
+        <button type="button" onclick="solvedKnapsack()">Resolver</button><br>
+
+        <h3>Items seleccionados</h3>
+        <div id="chosen-items"></div>
+    </body>
+</html>
