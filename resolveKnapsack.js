@@ -6,7 +6,7 @@ let firstItem = true;
 // ── WASM status ──────────────────────────────────────────
 Module.onRuntimeInitialized = () => {
     document.getElementById('wdot').className = 'wdot ok';
-    document.getElementById('wasm-status').textContent = 'módulo WASM listo';
+    document.getElementById('wasm-status').textContent = 'Módulo WASM listo';
     document.getElementById('btn-solve').disabled = false;
 };
 
