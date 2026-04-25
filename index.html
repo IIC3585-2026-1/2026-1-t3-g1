@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Knapsack — WebAssembly</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <script src="knapsack.js" defer></script>
+  <script src="resolveKnapsack.js" defer></script>
+  
+</head>
+<body>
+
+<header>
+ 
+  <h1>Knap<em>sack</em></h1>
+  <div class="wasm-badge">
+    <div class="wdot spin" id="wdot"></div>
+    <span id="wasm-status">Cargando módulo WASM…</span>
+  </div>
+</header>
+
+<div class="container">
+
+  <!-- Peso máximo -->
+  <div class="card">
+    <div class="card-label">Capacidad de la mochila</div>
+    <div class="field" style="max-width:180px">
+      <label for="max-weight">Peso máximo (kg)</label>
+      <input type="number" id="max-weight" value="25" min="1" max="100"/>
+    </div>
+  </div>
+
+  <!-- Agregar ítem -->
+  <div class="card">
+    <div class="card-label">Agregar ítem</div>
+    <div class="form-row">
+      <div class="field">
+        <label for="Item-W">Peso (kg)</label>
+        <input type="number" id="Item-W" name="Item-W" placeholder="ej: 12" min="1"/>
+      </div>
+      <div class="field">
+        <label for="item-V">Valor ($)</label>
+        <input type="number" id="item-V" name="item-V" placeholder="ej: 4" min="1"/>
+      </div>
+      <button class="btn" onclick="addItem()">+ Agregar</button>
+    </div>
+  </div>
+
+  <!-- Lista ítems -->
+  <div class="card">
+    <div class="card-label">Ítems ingresados</div>
+    <ul id="list-items">
+      <li class="li-empty">Aún no hay ítems</li>
+    </ul>
+  </div>
+
+  <!-- Resolver -->
+  <button class="btn btn-primary" id="btn-solve" onclick="solvedKnapsack()" disabled>
+    Resolver
+  </button>
+
+  <!-- Resultado -->
+  <div class="card" id="result-section">
+    <div class="card-label">Solución óptima</div>
+    <div class="result-stats">
+      <div class="stat hl">
+        <div class="s-label">Valor máximo</div>
+        <div class="s-val" id="res-valor">—</div>
+      </div>
+      <div class="stat">
+        <div class="s-label">Ítems elegidos</div>
+        <div class="s-val" id="res-count">—</div>
+      </div>
+    </div>
+    <ul id="chosen-items"></ul>
+  </div>
+
+</div>
