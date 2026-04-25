@@ -16,13 +16,22 @@ Se adaptó el código original:
 2. cd emsdk
 3. ./emsdk install latest
 4. ./emsdk activate latest
-5. ./emsdk_env.bat
+5. ./emsdk_env.bat (Windows) o source ./emsdk_env.sh (Linux)
 
 ### Comando de compilación con Emscripten (genera .js y .wasm):
+(Windows)
 1. emcc knapsack.c -O3 -s WASM=1 `
   -s EXPORTED_FUNCTIONS='["_knapsack_solve","_get_result_value","_get_result_item","_get_result_count","_malloc","_free"]' `
   -s EXPORTED_RUNTIME_METHODS='["ccall","cwrap","getValue","setValue"]' `
   -o knapsack.js
+
+(Linux)
+```
+emcc knapsack.c -O3 -s WASM=1 \
+  -s EXPORTED_FUNCTIONS='["_knapsack_solve","_get_result_value","_get_result_item","_get_result_count","_malloc","_free"]' \
+  -s EXPORTED_RUNTIME_METHODS='["ccall","cwrap","getValue","setValue"]' \
+  -o knapsack.js
+```
 
 Flags usadas
 1. -03: optimización agresiva
