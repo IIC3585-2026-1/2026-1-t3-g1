@@ -1,0 +1,117 @@
+.comparison-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .8rem;
+}
+
+.comp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.2rem;
+}
+
+.comp-card .card-label {
+  margin-bottom: .8rem;
+}
+
+.comp-engine {
+  font-family: var(--bebas);
+  font-size: 1.6rem;
+  letter-spacing: .04em;
+  line-height: 1;
+  margin-bottom: .8rem;
+}
+
+.comp-engine.js  { color: var(--accent); }
+.comp-engine.wasm { color: var(--success); }
+
+.comp-result {
+  font-family: var(--mono);
+  font-size: .78rem;
+  color: var(--accent);
+  margin-bottom: .5rem;
+  min-height: 1.2em;
+}
+
+.comp-time {
+  font-family: var(--mono);
+  font-size: .7rem;
+  color: var(--muted);
+  min-height: 1.1em;
+}
+
+.time-bar-wrap {
+  margin-top: .7rem;
+  height: 4px;
+  background: var(--border);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.time-bar {
+  height: 100%;
+  border-radius: 99px;
+  background: var(--muted);
+  width: 0%;
+  transition: width .5s ease;
+}
+
+.comp-card.js  .time-bar { background: var(--accent); }
+.comp-card.wasm .time-bar { background: var(--success); }
+
+.winner-badge {
+  display: inline-block;
+  font-family: var(--mono);
+  font-size: .6rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  background: var(--yellow);
+  color: var(--accent);
+  padding: .15em .5em;
+  border-radius: 4px;
+  margin-left: .4rem;
+  vertical-align: middle;
+  opacity: 0;
+  transition: opacity .3s;
+}
+.winner-badge.show { opacity: 1; }
+
+.inputs-card .field { flex: 1; min-width: 0; }
+
+.inputs-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: .6rem;
+  margin-bottom: .8rem;
+}
+
+.speedup-card {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  text-align: center;
+  padding: 1rem;
+  display: none;
+}
+
+.speedup-card .card-label { color: var(--muted); }
+
+.speedup-val {
+  font-family: var(--bebas);
+  font-size: 3rem;
+  line-height: 1;
+  color: var(--yellow);
+}
+
+.speedup-desc {
+  font-family: var(--mono);
+  font-size: .7rem;
+  color: var(--muted);
+  margin-top: .3rem;
+}
+
+@media (max-width: 480px) {
+  .comparison-grid { grid-template-columns: 1fr; }
+  .inputs-row { grid-template-columns: 1fr 1fr; }
+}

@@ -44,6 +44,14 @@ header h1 {
 }
 header h1 em { font-style: normal; background: var(--yellow); padding: 0 .15em; }
 
+.header-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: .7rem;
+    gap: 1rem;
+}
+
 .wasm-badge {
     display: inline-flex;
     align-items: center;
@@ -58,6 +66,37 @@ header h1 em { font-style: normal; background: var(--yellow); padding: 0 .15em; 
 .wdot.err { background: var(--danger); }
 .wdot.spin { animation: blink .9s infinite; }
 @keyframes blink { 0%,100%{opacity:1}50%{opacity:.2} }
+
+.header-nav {
+    display: flex;
+    gap: .2rem;
+}
+ 
+.nav-link {
+    font-family: var(--mono);
+    font-size: .65rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: var(--muted);
+    padding: .3em .7em;
+    border-radius: 6px;
+    border: 1px solid transparent;
+    transition: all .15s;
+}
+ 
+.nav-link:hover {
+    color: var(--accent);
+    border-color: var(--border);
+    background: var(--surface);
+}
+ 
+.nav-link.active {
+    color: var(--accent);
+    background: var(--surface);
+    border-color: var(--border);
+    font-weight: 500;
+}
 
 .container {
     max-width: 640px;

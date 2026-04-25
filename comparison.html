@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Knapsack — JS vs WASM</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="comparison.css"/>
+</head>
+<body>
+ 
+<header>
+  <h1>Knap<em>sack</em></h1>
+  <div class="header-bottom">
+    <div class="wasm-badge">
+      <div class="wdot ok"></div>
+      <span>JS vs WebAssembly</span>
+    </div>
+    <nav class="header-nav">
+      <a href="index.html" class="nav-link">Resolver</a>
+      <a href="comparison.html" class="nav-link active">JS vs WASM</a>
+    </nav>
+  </div>
+</header>
+ 
+<div class="container">
+ 
+  <!-- Inputs -->
+  <div class="card inputs-card">
+    <div class="card-label">Configuración del caso</div>
+    <div class="inputs-row">
+      <div class="field">
+        <label for="weights">Pesos (csv)</label>
+        <input type="text" id="weights" value="12,2,1,1,4"/>
+      </div>
+      <div class="field">
+        <label for="values">Valores (csv)</label>
+        <input type="text" id="values" value="4,2,1,2,10"/>
+      </div>
+      <div class="field">
+        <label for="capacity">Capacidad</label>
+        <input type="number" id="capacity" value="15" min="1"/>
+      </div>
+    </div>
+    <button class="btn" id="btn-big" onclick="generateBigCase()">Generar caso grande</button>
+  </div>
+ 
+  <!-- Run -->
+  <button class="btn btn-primary" onclick="runComparison()">Ejecutar comparación</button>
+ 
+  <!-- Results side by side -->
+  <div class="comparison-grid">
+    <div class="comp-card js">
+      <div class="card-label">Motor</div>
+      <div class="comp-engine js">JavaScript
+        <span class="winner-badge" id="js-badge">+ rápido</span>
+      </div>
+      <div class="comp-result" id="js-result">—</div>
+      <div class="comp-time" id="js-time">—</div>
+      <div class="time-bar-wrap"><div class="time-bar" id="js-bar"></div></div>
+    </div>
+ 
+    <div class="comp-card wasm">
+      <div class="card-label">Motor</div>
+      <div class="comp-engine wasm">
+        WebAssembly
+        <span class="winner-badge" id="wasm-badge">+ rápido</span>
+      </div>
+      <div class="comp-result" id="wasm-result">—</div>
+      <div class="comp-time" id="wasm-time">—</div>
+      <div class="time-bar-wrap"><div class="time-bar" id="wasm-bar"></div></div>
+    </div>
+  </div>
+ 
+  <!-- Speedup -->
+  <div class="card speedup-card" id="speedup-card">
+    <div class="card-label">Aceleración</div>
+    <div class="speedup-val" id="speedup-val">—</div>
+    <div class="speedup-desc" id="speedup-desc">WASM es más rápido</div>
+  </div>
+ 
+</div>
+
+<script src="knapsack.js"></script> <!-- generado por emscripten -->
+<script type="module" src="comparison.js"></script>
+
+</body>
+</html>
