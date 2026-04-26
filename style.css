@@ -117,7 +117,6 @@ header h1 em { font-style: normal; background: var(--yellow); padding: 0 .15em; 
     font-size: .62rem;
     letter-spacing: .16em;
     text-transform: uppercase;
-    color: var(--muted);
     margin-bottom: 1rem;
 }
 
@@ -189,7 +188,7 @@ header h1 em { font-style: normal; background: var(--yellow); padding: 0 .15em; 
     font-size: .82rem;
     animation: fadeIn .2s ease;
 }
-.li-idx { font-size: .68rem; color: var(--muted); min-width: 46px; }
+.li-idx { font-size: .68rem; min-width: 46px; }
 .li-meta { color: var(--muted); margin-left: auto; font-size: .75rem; }
 .li-empty { color: var(--muted); font-family: var(--mono); font-size: .8rem; text-align: center; padding: .5rem; border: none !important; background: none !important; }
 

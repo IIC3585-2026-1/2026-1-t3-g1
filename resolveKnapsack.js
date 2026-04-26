@@ -12,7 +12,7 @@ Module.onRuntimeInitialized = () => {
 
 setTimeout(() => {
     if (document.getElementById('wdot').className.includes('spin')) {
-        document.getElementById('wdot').className          = 'wdot err';
+        document.getElementById('wdot').className = 'wdot err';
         document.getElementById('wasm-status').textContent = 'error al cargar WASM';
     }
 }, 7000);
@@ -49,7 +49,7 @@ const addItem = () => {
 
 
 
-const solvedKnapsack = async () => {
+const solvedKnapsack = () => {
     if (weights.length < 1) return;
 
     const maxWeight = parseInt(document.getElementById('max-weight').value);
