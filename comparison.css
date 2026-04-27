@@ -115,3 +115,18 @@
   .comparison-grid { grid-template-columns: 1fr; }
   .inputs-row { grid-template-columns: 1fr 1fr; }
 }
+
+img.thief-img, img.police-img {
+    position: absolute;
+    width: 90px;
+    transition: all .5s ease;
+    opacity: 0;
+}
+img.thief-img.show {
+    opacity: 1;
+    transform: translateX(-6px);
+}
+img.police-img.show {
+    opacity: 1;
+    transform: translateX(-6px);
+}
