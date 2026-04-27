@@ -53,6 +53,10 @@ export function runComparison() {
   document.getElementById('speedup-card').style.display = 'none';
   document.getElementById('wasm-badge').classList.remove('show');
   document.getElementById('js-badge').classList.remove('show');
+  document.getElementById('wasm-thief').classList.remove('show');
+  document.getElementById('wasm-police').classList.remove('show');
+  document.getElementById('js-thief').classList.remove('show');
+  document.getElementById('js-police').classList.remove('show');
 
   // JS
   let start = performance.now();
@@ -83,10 +87,14 @@ export function runComparison() {
     card.style.display = 'block';
     if (ratio >= 1) {
         document.getElementById('wasm-badge').classList.add('show');
+        document.getElementById('wasm-thief').classList.add('show');
+        document.getElementById('js-police').classList.add('show');
         document.getElementById('speedup-val').textContent  = `${ratio.toFixed(2)}×`;
         document.getElementById('speedup-desc').textContent = 'WASM es más rápido que JS';
       } else {
         document.getElementById('js-badge').classList.add('show');
+        document.getElementById('js-thief').classList.add('show');
+        document.getElementById('wasm-police').classList.add('show');
         document.getElementById('speedup-val').textContent  = `${(1/ratio).toFixed(2)}×`;
         document.getElementById('speedup-desc').textContent = 'JS es más rápido que WASM';
       }
